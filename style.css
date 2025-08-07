@@ -171,6 +171,12 @@ footer .social-links img {
     filter: invert(100%); /* Make icons white */
 }
 
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     header h1 {
