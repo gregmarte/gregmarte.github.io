@@ -7,17 +7,50 @@
   <link rel="stylesheet" href="style.css">
   <style>
     body { display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 100vh; background: #f4f4f4; }
-    .dev-container { background: #fff; padding: 40px 30px; border-radius: 12px; box-shadow: 0 4px 16px rgba(0,0,0,0.08); text-align: center; }
-    h1 { color: #3498db; margin-bottom: 16px; }
-    p { color: #555; font-size: 1.2em; }
+    .content-container { background: #fff; padding: 40px 30px; border-radius: 12px; box-shadow: 0 4px 16px rgba(0,0,0,0.08); max-width: 800px; width: 90%; text-align: left; }
+    h1 { color: #3498db; margin-bottom: 20px; text-align: center; }
+    p, li { color: #555; font-size: 1.1em; line-height: 1.6; }
+    ul { margin-bottom: 20px; }
     a { color: #3498db; text-decoration: underline; }
+    .gif-container {
+      width: 80%;
+      margin: 0 auto;
+    }
+    .gif-container img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
   </style>
 </head>
+
 <body>
-  <div class="dev-container">
-    <h1>🚧 Under Development 🚧</h1>
-    <p>This page is currently under construction.<br>
-    Please check back soon!</p>
+  <div class="content-container">
+  <h1>Test Automation</h1>
+    
+   <p>
+      Let's get started with Playwright.<BR>
+      SUT (site under test): <a href="https://academybugs.com/find-bugs">Bug Academy</a><BR>
+      <BR>
+      Video:<BR><BR>
+        <div >
+          <img src="./img/playwright-academybugs.gif" alt="Test run of playwright on academybugs website"><BR>
+        </div>
+      <BR>
+      Source:<BR>
+      <p style="margin-left: 40px">GitHub: <a href="https://github.com/gregmarte/academy-bugs">https://github.com/gregmarte/academy-bugs</a></p>
+        <BR><BR>
+    </p>
+    <p>
+      Future: 
+      <ul style="margin-left: 40px;">
+        <li>Keyword Driver Framework versus Page Object Model</li>
+        <li>Solving page load timing issues in React pages</li>
+        <li>Code review guidelines</li>
+      </ul>
+      <BR><BR>
+    </p>
+
     <p><a href="index.html">&larr; Back to Home</a></p>
   </div>
 </body>
