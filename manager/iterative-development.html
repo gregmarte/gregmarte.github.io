@@ -7,17 +7,39 @@
   <link rel="stylesheet" href="style.css">
   <style>
     body { display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 100vh; background: #f4f4f4; }
-    .dev-container { background: #fff; padding: 40px 30px; border-radius: 12px; box-shadow: 0 4px 16px rgba(0,0,0,0.08); text-align: center; }
-    h1 { color: #3498db; margin-bottom: 16px; }
-    p { color: #555; font-size: 1.2em; }
+    .content-container { background: #fff; padding: 40px 30px; border-radius: 12px; box-shadow: 0 4px 16px rgba(0,0,0,0.08); max-width: 800px; width: 90%; text-align: left; }
+    h1 { color: #3498db; margin-bottom: 20px; text-align: center; }
+    p, li { color: #555; font-size: 1.1em; line-height: 1.6; }
+    ul { margin-bottom: 20px; }
     a { color: #3498db; text-decoration: underline; }
+    .content-container img {
+      max-width: 100%; 
+      height: auto; 
+      display: block; 
+    }
   </style>
 </head>
 <body>
-  <div class="dev-container">
-    <h1>🚧 Under Development 🚧</h1>
-    <p>This page is currently under construction.<br>
-    Please check back soon!</p>
+  <div class="content-container">
+    <h1>Iterative Development</h1>
+    <div style="max-width:100%;">
+      <img src="../img/generating-value.jpg" alt="Graph showing 10% value over 10 periods, with 100% after 8 periods"><BR>
+    </div>
+    <br>
+    <p>Figuring out how to do projects in an iterative way is essential to building value.<br>
+      A project could take twice as long and still be comparable to a waterfall project.</p>
+    <p>Any opportunity to break a task down into a value creating piece is essential to modern project design.<br>
+      Even if reworking at each step will be double the time cost.</p>
+    <p>
+      Also, with iterative development we gain all of these benefits:
+      <ul style="text-align: left; list-style-type: disc;">
+        <li>Learn and adjust development through each planning stage</li>
+        <li>Move into the unknown, while managing the risk</li>
+        <li>Tighter team integration (, at the risk of more confusion, and more critical paths in the project)*</li>
+        <li>Able to halt a project at any point, and move onto another higher value proposition</li>
+      </ul>
+    </p>
+    <p>*Teams do need to learn to operate iteratively.</p>
     <br>
     <p style="text-align: center;">-</p>
     <p style="text-align: center;"><a href="../manager-manifesto.html">&larr; Back to Manager Manifesto</a></p>
