@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DORA Metrics</title>
+  <link rel="stylesheet" href="../style.css">
+  <style>
+    body { display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 100vh; background: #f4f4f4; }
+    .content-container { background: #fff; padding: 40px 30px; border-radius: 12px; box-shadow: 0 4px 16px rgba(0,0,0,0.08); max-width: 800px; width: 90%; text-align: left; }
+    h1 { color: #3498db; margin-bottom: 20px; text-align: center; }
+    p, li { color: #555; font-size: 1.1em; line-height: 1.6; }
+    ul { margin-bottom: 20px; }
+    a { color: #3498db; text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <div class="content-container">
+    <h1>Development Team Metrics</h1>
+    
+    <p>As a Release Manager, I read and today contintue to recommend to everyone to read <a href="https://en.wikipedia.org/wiki/DevOps_Research_and_Assessment">Accelerate</a><br>
+    <p>These are the 4 metrics that measure the efficiency and stability of software delivery.</p><br>
+    <p>i.e. how to measure "let's be better next time".</p><br>
+    <ul style="text-align: center; list-style-type: none;">
+      <li><strong>Deployment Frequency</strong> </li>
+      <li><strong>Lead Time for Changes</strong></li>
+      <li><strong>Change Failure Rate </strong></li>
+      <li><strong>Mean Time to Recovery</strong></li>
+    </ul>
+    <br>
+    <p>Here’s a deeper dive and personal take:</p>
+    <br>
+    <ol>
+      <li><strong>Deployment Frequency</strong> Are you able to release at any time? During work hours, daily, weekly, monthly? Delivering value sooner, reduces work in progress, gives faster feedback, and allows for everything to be more iterative.</li><br>
+      <li><strong>Lead Time for Changes </strong> (design + development) I have an idea, how fast can you implement it. Often split into Design and Development components, because Design is a creative and exploratory process of idea solification. This is where AI is shining. The ability to Develop in real time.</li><br>
+      <li><strong>Change Failure Rate </strong> In Six Simga "Zero-defects" is considered at 3.4 per million opportunities. As an SDET, I think severity matters.</li><br>
+      <li><strong>Mean Time to Recovery</strong> For myself this is from first incident to recovery. I've seen and disagree with, from first report to recovery. Error catching is doable. Rollback to last known good is doable, but not yet a reliable pattern, especially with databases.</li><br>
+    </ol>
+    <br>
+    <p>What I don't yet know is, which of these is "Most Important". In a past project I have consciously chosen a path that reduces planned Deployment Frequency from 'working hours' to 'daily'. Benefits were an improved Change Failure Rate and a less expensive Mean Time to Recovery. Would I do it again, yes, I was implementing/supporting a low cost soltuion for high coupled software.</p><br>
+    <br>
+    <p style="text-align: center;">-</p>
+    <p style="text-align: center;"><a href="../devops.html">&larr; Back to DevOps</a></p>
+    <p style="text-align: center;"><a href="../index.html">&larr; Back to Home</a></p>
+
+  </div>
+</body>
+</html>
