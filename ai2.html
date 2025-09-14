@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gemini API Haiku Generator</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background-color: #fff;
+            padding: 2em;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            max-width: 500px;
+            text-align: center;
+        }
+        h1 {
+            color: #4a4a4a;
+            margin-bottom: 0.5em;
+        }
+        p {
+            line-height: 1.6;
+            margin: 1em 0;
+        }
+        .haiku-output {
+            font-size: 1.2em;
+            font-style: italic;
+            margin-top: 1em;
+            min-height: 3em;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #007bff;
+        }
+        a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+      <h1>Haiku Generator</h1>
+      <p>Generate a haiku on the fly.</p>
+      <p>To use this, you need a <a href="https://aistudio.google.com/apikey" target="_blank">Gemini API key</a>.</p>
+      <label for="api-key-input" style="display:block;margin-bottom:0.5em;">Paste your API key:</label>
+      <input type="text" id="api-key-input" value="YOUR_API_KEY" style="width:100%;margin-bottom:1em;" autocomplete="off">
+      <label for="prompt-input" style="display:block;margin-bottom:0.5em;">Prompt:</label>
+      <input type="text" id="prompt-input" value="Write a haiku about today's date" style="width:100%;margin-bottom:1em;" autocomplete="off">
+      <button id="generate-btn" style="margin-bottom:1em;">Generate</button>
+      <p class="haiku-output" id="haiku-output"></p>
+
+          
+      <p style="text-align: center;">-</p>
+      <p style="text-align: center;"><a href="../ai.html">&larr; Back to AI</a></p>
+      <p style="text-align: center;"><a href="../index.html">&larr; Back to Home</a></p>
+    </div>
+
+
+    <script>
+        // Default API key value is 'YOUR_API_KEY'.
+    const haikuOutput = document.getElementById('haiku-output');
+    const generateBtn = document.getElementById('generate-btn');
+    const apiKeyInput = document.getElementById('api-key-input');
+    const promptInput = document.getElementById('prompt-input');
+
+        function isValidKey(key) {
+            return key && key !== 'YOUR_API_KEY';
+        }
+
+        function setButtonState() {
+            if (!isValidKey(apiKeyInput.value.trim())) {
+                haikuOutput.innerText = "Please paste your Gemini API key above.";
+                generateBtn.disabled = true;
+            } else {
+                haikuOutput.innerText = "";
+                generateBtn.disabled = false;
+            }
+        }
+
+        setButtonState();
+        apiKeyInput.addEventListener('input', setButtonState);
+
+        async function generateHaiku() {
+            const API_KEY = apiKeyInput.value.trim();
+            const prompt = promptInput.value.trim();
+            if (!isValidKey(API_KEY)) {
+                haikuOutput.innerText = "Please paste your API key above.";
+                return;
+            }
+            haikuOutput.innerText = "Generating ...";
+            try {
+                const url = "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=" + API_KEY;
+                const body = {
+                    contents: [{ parts: [{ text: prompt }] }]
+                };
+                const response = await fetch(url, {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify(body)
+                });
+                if (!response.ok) throw new Error("API error: " + response.status);
+                const data = await response.json();
+                const haiku = data.candidates?.[0]?.content?.parts?.[0]?.text || "No output generated.";
+                haikuOutput.innerText = haiku;
+            } catch (error) {
+                console.error("Error generating content:", error);
+                haikuOutput.innerText = "Failed to generate. Please check your API key and network connection.";
+            }
+        }
+
+        generateBtn.addEventListener('click', generateHaiku);
+    </script>
+  </body>
+</html>
