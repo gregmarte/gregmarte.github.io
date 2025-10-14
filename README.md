@@ -1,6 +1,8 @@
 # gregmarte.github.io
 Website
 
+# Python 3.13 
+
 # Local activation of website:
 > python -m http.server 
 
